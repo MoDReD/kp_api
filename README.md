@@ -8,7 +8,9 @@
 
 * Изменено название гема.
 * Восстановленна работа API использует последню версию подписи 5.0.0.
-* Написны тесты.
+* Написаны тесты.
+
+[![Build Status](https://travis-ci.org/groverz/kp_api.svg?branch=master)](https://travis-ci.org/groverz/kp_api)
 
 ## Установка
 
@@ -28,7 +30,7 @@ gem 'KpApi'
 ### Глобальные функции
 
 ```ruby
-api = KinopoiskAPI::Class 
+api = KinopoiskAPI::[Class] 
 ```
 
 ```ruby
@@ -44,7 +46,7 @@ api.data
 
 ```ruby
 #   Оригинальный хеш кинопоиска (используется в некоторых классах для дополнительного запроса). 
-#   Пример: __film.peoples_full__)
+#   Пример: film.peoples_full)
 api.data2 
 ```
 
