@@ -89,7 +89,7 @@ module KpApi
           [
             [:id,              item['id'].to_i       ],
             [:kp_type,         item['type']          ],
-            [:poster_url,      item['posterURL'].present? ? "#{DOMAINS[:kinopoisk][:poster][:name]}_#{item['id']}.jpg" : nil],
+            [:poster_url,      !item['posterURL'].nil? ? "#{DOMAINS[:kinopoisk][:poster][:name]}_#{item['id']}.jpg" : nil],
             [:name_ru,         item['nameRU']        ],
             [:name_en,         item['nameEN']        ],
             [:description,     item['description']   ],

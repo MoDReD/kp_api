@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
     Gem is based on the mobile API.
   EOF
 
-  spec.homepage             = 'https://github.com/alpha-ver/Kinopoisk-API-Gem'
+  spec.homepage             = 'https://github.com/groverz/kp_api'
   spec.license              = 'MIT'
   spec.post_install_message = "Thanks for installing!"
 

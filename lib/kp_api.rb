@@ -2,6 +2,7 @@ require 'net/http'
 require 'digest'
 require 'json'
 require 'date'
+require 'time'
 
 require 'kp_api/api_error'
 require 'kp_api/agent'
@@ -165,6 +166,8 @@ module KpApi
   def self.valid_json?(j)
     begin
       JSON.parse(j)
+
+
       return true
     rescue JSON::ParserError => e
       return false

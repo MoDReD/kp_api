@@ -73,7 +73,7 @@ module KpApi
 
           response = http.get(uri.request_uri, headers)
 
-          print " <- [#{(Time.now-get_time).round 3}s]\n"
+          print " <- [#{(Time.now-get_time).round 3}s] [#{response.code}]\n"
 
           if KpApi::valid_json?(response.body)
             j = JSON.parse(response.body)
@@ -207,7 +207,12 @@ module KpApi
       def min_data(data, name)
         s = dn(data, name)
         begin
-          !s.nil? ? Time.parse(s).seconds_since_midnight.to_i / 60 : 0
+          if s.nil?
+            0
+          else
+            time = Time.parse(s)
+            (time.hour * 60) + time.min
+          end
         rescue
         end
       end

@@ -1,4 +1,4 @@
-# КиноПоиск API (Gem)
+# КиноПоиск API (Gem) [![Build Status](https://travis-ci.org/groverz/kp_api.svg?branch=master)](https://travis-ci.org/groverz/kp_api)
 
 Этот gem создан для упрощения работы с КиноПоиск API в проектах на Ruby.
 Гем рабтает через API от кинопоиска. 
@@ -9,8 +9,8 @@
 * Изменено название гема.
 * Восстановленна работа API использует последню версию подписи 5.0.0.
 * Написаны тесты.
+* Добавлен travis-ci
 
-[![Build Status](https://travis-ci.org/groverz/kp_api.svg?branch=master)](https://travis-ci.org/groverz/kp_api)
 
 ## Установка
 
@@ -30,7 +30,7 @@ gem 'KpApi'
 ### Глобальные функции
 
 ```ruby
-api = KinopoiskAPI::[Class] 
+api = KpApi::[Class] 
 ```
 
 ```ruby
@@ -84,7 +84,7 @@ e.body
 ### Фильм
 
 ```ruby
-film = KinopoiskAPI::Film.new(film_id)
+film = KpApi::Film.new(film_id)
 ```
 
 ```ruby
@@ -119,7 +119,7 @@ film.peoples_full
 ### Люди(Режисеры, актеры, операторы и т.д.).
 
 ```ruby
-people = KinopoiskAPI::People.new(people_id)
+people = KpApi::People.new(people_id)
 ```
 
 ```ruby
