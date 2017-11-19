@@ -2,12 +2,17 @@ module KpApi
   class Today < Agent
     attr_accessor :url
 
-    def initialize
-      @url = "#{DOMAINS[:api]}/#{METHODS[:get_today_films][:method]}?cityID=1"
+    def initialize(city_id=1, country_id=2)
+      @url = "#{DOMAINS[:api]}#{METHODS[:get_today_films][:method]}?cityID=#{city_id}&countryID=#{country_id}"
       @json = json
+
+      unless status
+        raise ApiError.new(@json[:message], @json[:data])
+      end
     end
 
     def view
+
       films.map do |film|
         {
           id:                     int_data(String, film['id'          ]),
@@ -40,7 +45,11 @@ module KpApi
     private
 
       def films
-        @json['filmsData']
+        if @json['filmsData'].nil?
+          []
+        else
+          @json['filmsData']
+        end
       end
 
   end

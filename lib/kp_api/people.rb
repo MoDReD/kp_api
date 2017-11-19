@@ -7,7 +7,7 @@ module KpApi
       @url = "#{DOMAINS[:api]}#{METHODS[:get_people][:method]}?#{METHODS[:get_people][:id]}=#{id}"
       @json = json
 
-      if !status || (@json['nameRU'] == "" && json["nameEN"] == "" && @json["sex"] == nil)
+      if !status || (@json['nameRU'] == "" && @json["nameEN"] == "" && @json["sex"] == nil)
         raise ApiError.new(@json[:mesage], @json[:data])
       end
     end

@@ -71,7 +71,6 @@ module KpApi
     get_people: {
       method: 'getKPPeopleDetailView',
       id:     'peopleID'
-
     },
     get_today_films: {
       method: 'getKPTodayFilms'
@@ -121,6 +120,9 @@ module KpApi
       method: 'getBestFilmsList'
     },
 
+    get_all_cities_view:{
+      method: 'getKPAllCitiesView'
+    },
 
 
     search_global: {
