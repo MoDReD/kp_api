@@ -10,6 +10,10 @@ module KpApi
       @page_count = @json['pagesCount']
     end
 
+    def found?
+      @page_count != 0
+    end
+
     def peoples_count
       @json['searchPeoplesCountResult']
     end
@@ -24,7 +28,7 @@ module KpApi
 
       def gen_url
         @url = [
-          "#{DOMAINS[:api]}/#{METHODS[:search_people][:method]}",
+          "#{DOMAINS[:api]}#{METHODS[:search_people][:method]}",
           "?#{METHODS[:search_people][:keyword]}=#{@keyword}",
           "&#{METHODS[:search_people][:page]}=#{@page}"
         ].join('')

@@ -230,7 +230,12 @@ search.peoples
 #### Поиск по фильмам
 
 ```ruby
-search = KpApi::FilmSearch.new('Экзистенция')
+search = KpApi::FilmSearch.new('Привет')
+```
+
+```ruby
+#   Найденно ли что нибудь
+search.found?
 ```
 
 ```ruby
@@ -254,14 +259,14 @@ search.page_count
 ```
 
 ```ruby
-#   Следующая страница
+#   Следующая страница(новый запрос к апи)
 search.next_page
 #   > true  [Полученна следующая станица]
 #   > false [Достигли конца пагинации]
 ```
 
 
-### Поиск по людям
+#### Поиск по людям
 
 ```ruby
 search = KinopoiskAPI::PeopleSearch.new('Q')
@@ -293,6 +298,15 @@ search.next_page
 #   > true  [Полученна следующая станица]
 #   > false [Достигли конца пагинации]
 ```
+
+#### Живой поиск
+
+@todo
+
+### Топы
+
+@todo
+
 
 ## License
 

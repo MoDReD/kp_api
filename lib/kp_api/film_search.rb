@@ -10,13 +10,17 @@ module KpApi
       @page_count = @json['pagesCount']
     end
 
+    def found?
+      @page_count != 0
+    end
+
     def films_count
       @json['searchFilmsCountResult']
     end
 
     def view
       @json['searchFilms'].map do |film|
-        film_hash(film)
+        film_hash(film, 'id')
       end
     end
 
@@ -24,7 +28,7 @@ module KpApi
 
       def gen_url
         @url = [
-          "#{DOMAINS[:api]}/#{METHODS[:search_film][:method]}",
+          "#{DOMAINS[:api]}#{METHODS[:search_film][:method]}",
           "?#{METHODS[:search_film][:keyword]}=#{@keyword}",
           "&#{METHODS[:search_film][:page]}=#{@page}"
         ].join('')
