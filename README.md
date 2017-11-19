@@ -1,4 +1,4 @@
-# КиноПоиск API (Gem) [![Build Status](https://travis-ci.org/groverz/kp_api.svg?branch=master)](https://travis-ci.org/groverz/kp_api) [![Gem Version](https://badge.fury.io/rb/kp_api.svg)](https://badge.fury.io/rb/kp_api)
+# КиноПоиск API (Gem) [![Build Status](https://travis-ci.org/groverz/kp_api.svg?branch=master)](https://travis-ci.org/groverz/kp_api) [![Gem Version](https://badge.fury.io/rb/kp_api.svg)](https://badge.fury.io/rb/kp_api) [![Dependency Status](https://gemnasium.com/badges/github.com/groverz/kp_api.svg)](https://gemnasium.com/github.com/groverz/kp_api)
 Этот gem создан для упрощения работы с КиноПоиск API в проектах на Ruby.
 Гем работает через API от кинопоиска. 
 Используется соответственно не официально, прикидываясь андроидом.
