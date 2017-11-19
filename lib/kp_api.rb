@@ -10,15 +10,16 @@ require 'kp_api/film'
 require 'kp_api/people'
 require 'kp_api/category'
 require 'kp_api/today'
-require 'kp_api/top'
+
 require 'kp_api/global_search'
 require 'kp_api/film_search'
 require 'kp_api/people_search'
+require 'kp_api/live_search'
 
-#require 'kp_api/reviews'
-#require 'kp_api/gallery'
-#require 'kp_api/similar'
-
+require 'kp_api/top'
+########################################################################################################################
+#                                                                                                                      #
+########################################################################################################################
 require 'kp_api/version'
 
 module KpApi
@@ -124,11 +125,16 @@ module KpApi
       method: 'getKPAllCitiesView'
     },
 
-
     search_global: {
       method: 'getKPGlobalSearch',
       keyword: 'keyword'
     },
+
+    search_live: {
+      method:  'getKPLiveSearch',
+      keyword: 'keyword'
+    },
+
     search_film: {
       method: 'getKPSearchInFilms',
       keyword: 'keyword',

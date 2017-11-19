@@ -9,12 +9,12 @@ module KpApi
         gen_url
         @json       = json
         @page_count = @json['pagesCount']
+        @all        = nil
       else
         #todo
         raise ArgumentError
       end
     end
-
 
     def view
       @json['items'].map do |film|
@@ -23,23 +23,22 @@ module KpApi
     end
 
     def view_all(limit=15)
-      all = view
-      while @page <= limit && next_page
-        all += @json['items'].map do |film|
-          film_hash(film,'id')
+      if @all.nil?
+        all = view
+        while @page <= limit && next_page
+          all += @json['items'].map do |film|
+            film_hash(film,'id')
+          end
         end
+        @all = all
+        @all
+      else
+        @all
       end
-      all
     end
 
     def ids_all(limit=15)
-      all = @json['items'].map{|film| film['id']}
-      while @page <= limit && next_page
-        all += @json['items'].map do |film|
-          film['id']
-        end
-      end
-      all
+      view_all(limit).map{|film| film[:id]}
     end
 
     private
