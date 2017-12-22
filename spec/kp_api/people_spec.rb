@@ -10,7 +10,7 @@ describe KpApi::People do
 
     expect( r.data['class']        ).to eql("KPPeopleDetailView")
     expect( r.data['peopleID']     ).to eql("1")
-    expect( r.data['webURL']       ).to eql("http://www.kinopoisk.ru/name/1/")
+    expect( r.data['webURL']       ).to eql("https://www.kinopoisk.ru/name/1/")
     expect( r.data['nameRU']       ).to eql("Стивен Карпентер")
     expect( r.data['nameEN']       ).to eql("Stephen Carpenter")
     expect( r.data['sex']          ).to eql("male")
