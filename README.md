@@ -126,7 +126,7 @@ category = KpApi::Category.new(country_id=2)
 category.countries
 ```
 ```ruby
-# Страны (требует доп. запроса)
+# Города (требует доп. запроса)
 category.cities
 ```
 ```ruby
@@ -291,8 +291,9 @@ top.view_all(limit=15)
 @todo
 
 
-##Благодарность    
-Всем кто связывался со мной. (@to-do)
+
+## Благодарность    
+Всем кто связывался со мной и помог разобраться с алгоритмом. 
 
 
 ## License
